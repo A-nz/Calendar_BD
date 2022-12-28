@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>вход</title>
+</head>
+<body>
+    {% include 'base.html' %}
+    <h4>Register</h4>
+
+    {% for cat, msg in get_flashed_messages(True) %}
+    <div class="flash {{cat}}" style="color:#FF0000">{{msg}}</div>
+    {% endfor %}
+
+    <form action="/register" method="post" class="form-contact">
+        <p><label>Login: </label> <input type="text" name="login" value="" required />
+        <p><label>Password: </label> <input type="password" name="psw" value="" required />
+        <p><label>Repeat Password: </label> <input type="password" name="psw2" value="" required />
+        <p><input type="submit" value="Register">
+    </form>
+</body>
+</html>
